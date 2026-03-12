@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NNPTUD API Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .endpoint {
+            background: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .method {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .get { background: #3498db; color: white; }
+        .post { background: #2ecc71; color: white; }
+        .put { background: #f39c12; color: white; }
+        .delete { background: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 NNPTUD API Server</h1>
+        <p>Server đang chạy thành công!</p>
+        
+        <h2>📋 Available Endpoints:</h2>
+        
+        <h3>👥 Users API</h3>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/users</div>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/users/:id</div>
+        <div class="endpoint"><span class="method post">POST</span> /api/v1/users</div>
+        <div class="endpoint"><span class="method put">PUT</span> /api/v1/users/:id</div>
+        <div class="endpoint"><span class="method delete">DELETE</span> /api/v1/users/:id</div>
+        <div class="endpoint"><span class="method post">POST</span> /api/v1/users/enable</div>
+        <div class="endpoint"><span class="method post">POST</span> /api/v1/users/disable</div>
+        
+        <h3>🎭 Roles API</h3>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/roles</div>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/roles/:id</div>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/roles/:id/users</div>
+        <div class="endpoint"><span class="method post">POST</span> /api/v1/roles</div>
+        <div class="endpoint"><span class="method put">PUT</span> /api/v1/roles/:id</div>
+        <div class="endpoint"><span class="method delete">DELETE</span> /api/v1/roles/:id</div>
+        
+        <h3>📦 Products API</h3>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/products</div>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/products/:id</div>
+        <div class="endpoint"><span class="method post">POST</span> /api/v1/products</div>
+        <div class="endpoint"><span class="method put">PUT</span> /api/v1/products/:id</div>
+        <div class="endpoint"><span class="method delete">DELETE</span> /api/v1/products/:id</div>
+        
+        <h3>📂 Categories API</h3>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/categories</div>
+        <div class="endpoint"><span class="method get">GET</span> /api/v1/categories/:id</div>
+        <div class="endpoint"><span class="method post">POST</span> /api/v1/categories</div>
+        <div class="endpoint"><span class="method put">PUT</span> /api/v1/categories/:id</div>
+        <div class="endpoint"><span class="method delete">DELETE</span> /api/v1/categories/:id</div>
+        
+        <p style="margin-top: 30px; color: #7f8c8d;">
+            <strong>Note:</strong> MongoDB is currently disabled. Database operations will not work until MongoDB is connected.
+        </p>
+    </div>
+</body>
+</html>

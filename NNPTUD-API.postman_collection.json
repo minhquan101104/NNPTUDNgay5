@@ -1,0 +1,533 @@
+{
+	"info": {
+		"name": "NNPTUD API Collection",
+		"description": "Complete API collection for Users, Roles, Products, and Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users API",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users"]
+						}
+					}
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "USER_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"john_doe\",\n  \"password\": \"password123\",\n  \"email\": \"john@example.com\",\n  \"fullName\": \"John Doe\",\n  \"avatarUrl\": \"https://i.sstatic.net/l60Hf.png\",\n  \"status\": false,\n  \"role\": \"ROLE_ID_HERE\",\n  \"loginCount\": 0\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users"]
+						}
+					}
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"John Updated\",\n  \"status\": true,\n  \"loginCount\": 5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "USER_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete User (Soft Delete)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "USER_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Enable User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john@example.com\",\n  \"username\": \"john_doe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/enable",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users", "enable"]
+						}
+					}
+				},
+				{
+					"name": "Disable User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john@example.com\",\n  \"username\": \"john_doe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/disable",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "users", "disable"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Roles API",
+			"item": [
+				{
+					"name": "Get All Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/roles",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "roles"]
+						}
+					}
+				},
+				{
+					"name": "Get Role By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/roles/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "roles", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ROLE_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Users By Role ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/roles/:id/users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "roles", ":id", "users"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ROLE_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Admin\",\n  \"description\": \"Administrator role with full access\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/roles",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "roles"]
+						}
+					}
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Super Admin\",\n  \"description\": \"Super administrator with all privileges\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/roles/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "roles", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ROLE_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Role (Soft Delete)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/roles/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "roles", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ROLE_ID_HERE"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Products API",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products?title=&min=0&max=10000",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "products"],
+							"query": [
+								{
+									"key": "title",
+									"value": ""
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "max",
+									"value": "10000"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "products", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "PRODUCT_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Sample Product\",\n  \"price\": 99.99,\n  \"description\": \"This is a sample product\",\n  \"category\": \"CATEGORY_ID_HERE\",\n  \"images\": [\"https://placeimg.com/640/480/any\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "products"]
+						}
+					}
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Product\",\n  \"price\": 149.99,\n  \"description\": \"Updated description\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "products", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "PRODUCT_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Product (Soft Delete)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "products", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "PRODUCT_ID_HERE"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Categories API",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Get Category By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "categories", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "CATEGORY_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Electronics\",\n  \"image\": \"https://placeimg.com/640/480/tech\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Electronics\",\n  \"image\": \"https://placeimg.com/640/480/tech\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "categories", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "CATEGORY_ID_HERE"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Category (Soft Delete)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/categories/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "v1", "categories", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "CATEGORY_ID_HERE"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	]
+}

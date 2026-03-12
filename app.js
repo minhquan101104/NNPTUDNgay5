@@ -24,13 +24,18 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/products', require('./routes/products'))
 app.use('/api/v1/categories', require('./routes/categories'))
+app.use('/api/v1/roles', require('./routes/roles'))
+app.use('/api/v1/users', require('./routes/users'))
 
 mongoose.connect('mongodb://localhost:27017/NNPTUD-C5');
 mongoose.connection.on('connected', function () {
-  console.log("connected");
+  console.log("✅ MongoDB connected successfully!");
 })
-mongoose.connection.on('disconnecting', function () {
-  console.log("disconnected");
+mongoose.connection.on('error', function (err) {
+  console.log("❌ MongoDB connection error:", err.message);
+})
+mongoose.connection.on('disconnected', function () {
+  console.log("⚠️  MongoDB disconnected");
 })
 
 // catch 404 and forward to error handler
